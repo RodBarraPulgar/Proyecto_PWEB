@@ -1,0 +1,118 @@
+/* ESTILOS PARA EL CONTENIDO DE CONTACTO */
+
+.contact_us{
+  height: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact_us h1{
+  font-weight: 700;
+  color: white;
+}
+
+.contact_us p{
+  color: white;
+}
+
+.contact_us button{
+  background-color: #007009;
+  color: white;
+}
+
+.contact_us button:hover {
+    color: #dfdfdf;
+}
+
+#btnview, #btnhide{
+    background-color: #004c06;
+    color: white;
+}
+
+#btnview:hover, #btnhide:hover{
+    background-color: #416a45;
+    color: rgb(0, 205, 17);
+}
+
+/* ESTILOS PARA EL FORMULARIO */
+.formulario{
+    text-align: center;
+    width: 400px;
+    background-color: rgb(33, 53, 71);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    margin: 10% auto 0;
+    border-radius: 9px;
+    margin-top: 0;
+}
+
+.formulario .txt_field{
+    text-decoration: none;
+}
+
+.formulario .txt_field label{
+    color: white;
+    width: 100%;
+    font-weight: 500;
+}
+.formulario .txt_field input{
+    background-color: rgb(194, 194, 194);
+    border: none;
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+label{
+    color: white;
+}
+
+.formulario input {
+    margin-bottom: 10px;
+}
+
+/* Estilos para la API del clima */
+
+.weather-content{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    width: 400px;
+    text-align: center;
+    padding: 20px 20px 50px;
+    margin: 10% auto 0;
+    background-color: rgb(33, 53, 71);
+    border-radius: 9px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+.weather-content h1,p{
+    color: white;
+}
+
+.result h2{
+    font-size: 70px;
+    line-height: 70px;
+    margin: -10px 0 10px;
+    color: #fff;
+}
+.result h5{
+    font-size: 21px;
+    margin: 2px;
+    color: #fff;
+}
+
+.alert-message {
+    margin: 24px 0 0;
+    color: red!important;
+}
+
+.contactanos{
+    background-color: rgb(39, 39, 39);
+    min-height: 1000px;
+}
+
+

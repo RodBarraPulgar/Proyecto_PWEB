@@ -1,0 +1,30 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+
+{% load crispy_forms_tags %}
+
+<title>Registro - GrupoCero</title>
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/register.css' %}">
+
+<form class="forma"action="" method="post">
+    {% csrf_token %}
+
+    <div class="card mx-auto" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title" id="titulo_register">Registro nuevo usuario</h5><hr>
+          <h5 class="card-title">Complete todos los campos</h5>
+          {{ form | crispy }}
+          <a href="{% url 'index' %}" class="card-link">Inicio</a>
+          <a href="{% url 'login' %}" class="card-link">Iniciar Sesion</a>
+
+          <button class="btn btn-sm btn-primary float-end" type="submit">Registrarse</button>
+        </div>
+      </div>
+       
+</form>
+
+    {% endblock %}

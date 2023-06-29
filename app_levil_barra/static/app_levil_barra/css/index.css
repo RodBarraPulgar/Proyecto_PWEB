@@ -1,0 +1,87 @@
+/* ESTILOS PARA LAS PAGINAS EN GENERAL PARA QUE EL FOOTER SEA RESPONSIVE */
+body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+
+/*ESTILOS PARA LA IMAGEN Y EL PARRAFO PRINCIPAL*/
+
+.contenido{
+    background-color: rgb(39, 39, 39);
+    padding-bottom: 40px;
+}
+.img_p1{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    padding-right: 1%;
+    float: right;
+}
+
+p{
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+    font-size: 18px;
+    color: rgb(193, 193, 193);
+}
+
+/*ESTILOS PARA LA IMAGEN DEL BOOTSTRAP*/
+
+.slide img{
+    height: 30vh;
+}
+
+/* Estilos para el cuadro */
+
+.multiple-boxes{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    border: 1px solid #a2a9b1;
+    background-color: rgb(86, 86, 86);
+    padding: 10px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estilos para la imagen del cuadro */
+.box img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 250px;
+    max-height:250px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el párrafo y el titulo del cuadro */
+.box p {
+    text-align: justify;
+    line-height: 1.5;
+    margin-bottom: 10;
+}
+
+.box h3{
+    color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.box hr{
+    color: white;
+}
+
+.caja_contenido{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}

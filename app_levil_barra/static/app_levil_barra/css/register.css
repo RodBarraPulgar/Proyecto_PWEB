@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .forma {
+    min-height: 74vh;
+    background-color: rgb(39, 39, 39);
+    border: 1px solid rgb(39, 39, 39);
+    border-radius: 4px;
+    padding-top: 150px;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .forma .card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .forma .card-link {
+    color: #5f9567;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .forma .card-link:hover {
+    color: #c5dcc8;
+  }
+
+  .forma .float-end {
+    float: right;
+  }
+
+  .forma input[type="text"],
+  .forma input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .forma button {
+    width: 100%;
+    padding: 12px;
+    background-color: #004403;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .forma button:hover {
+    background-color: #008f07;
+  }
+
+  #titulo_login {
+    text-align: center;
+    color: #fff;
+  }
+
+  hr {
+    color: #004403;
+  }
+
+  #titulo_register{
+    text-align: center;
+  }

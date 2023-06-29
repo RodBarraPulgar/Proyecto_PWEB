@@ -1,0 +1,41 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/productos.css' %}">
+
+<title>ProductosAdd - GrupoCero</title>
+
+<div class="contenido">
+    <div class="container1">
+        <h1>Agregar Producto</h1>
+        <form action="{% url 'agregarrec' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="id_nombre">Nombre</label><br><br>
+            <input type="text" name="nombre" id="id_nombre" required><br>
+            {% if form.errors.nombre %}
+                <p>{{ form.errors.nombre }}</p>
+            {% endif %}<br>
+            <label for="id_descripcion">Descripción</label><br><br>
+            <input type="text" name="descripcion" id="id_descripcion" required><br>
+            {% if form.errors.descripcion %}
+                <p>{{ form.errors.descripcion }}</p>
+            {% endif %}<br>
+            <label for="id_precio">Precio</label><br><br>
+            <input type="text" name="precio" id="id_precio" required pattern="[0-9]+"><br>
+            {% if form.errors.precio %}
+                <p>{{ form.errors.precio }}</p>
+            {% endif %}<br>
+            <label for="id_imagen">Imagen</label><br><br>
+            <input type="file" name="imagen" id="id_imagen" required><br>
+            {% if form.errors.imagen %}
+                <p>{{ form.errors.imagen }}</p>
+            {% endif %}<br>
+            <button type="submit" id="new">Agregar</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

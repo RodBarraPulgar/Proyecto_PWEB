@@ -1,0 +1,16 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/ubicacion.css' %}">
+
+<title>Ubicacion - GrupoCero</title>
+
+        <div id="map">
+                <script src="{% static 'app_levil_barra/js/script.js' %}" ></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+        </div>
+
+{% endblock %}

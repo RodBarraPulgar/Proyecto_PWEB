@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app_levil_barra/css/base.css' %}">
+    <link rel="shortcut icon" href="{% static 'app_levil_barra/imagenes/logotipo_cero.jpg' %}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <!--SE CREA EL ENCABEZADO DE LA PAGINA, QUE CORRESPONDE A UN MENU, ESTE CUENTA CON 5 OPCIONES Y EL LOGO CORRESPONDIENTE-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'index' %}">
+                <img src="{% static 'app_levil_barra/imagenes/logo_grupocero.png' %}" width="300" height="120">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'galeria' %}">GALERIA</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ACERCA DE
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'nosotros' %}">NOSOTROS</a></li>
+                            <li><a class="dropdown-item" href="{% url 'ubicacion' %}">UBICACION</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contacto' %}">CONTACTO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'productos' %}">PRODUCTOS</a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Salir</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">INGRESAR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register' %}">REGISTRARSE</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="contenido">
+
+            {% block contenido %}
+            {% endblock %}
+
+    </div>    
+    <script src="{% static 'app_levil_barra/js/jquery-3.6.4.min.js' %}" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <!--SE REALIZA EL PIE DE PÁGINA CON LOS ENLACES CORRESPONDIENTES A LAS REDES SOCIALES DE LA EMPRESA-->
+    <footer class="footer">
+        <ul>
+            <li><p class="parrafo_footer">copyright@GrupoCero Derechos reservados</p></li>
+            <li><p class="parrafo_footer">Nuestras redes sociales:</p></li>
+            <div class="center">
+                <li><a href="https://www.instagram.com"><img src="{% static 'app_levil_barra/imagenes/instagram.png' %}" height="41" width="41" > Instagram</a> </li>
+                <li><a href="https://www.youtube.com"><img src="{% static 'app_levil_barra/imagenes/youtube.png' %}" height="41" width="41"> Youtube</a></li>
+                <li><a href="https://www.twitter.com"><img src="{% static 'app_levil_barra/imagenes/twitter.png' %}" height="41" width="41"> Twitter</a></li>
+                <li><a href="https://www.facebook.com"><img src="{% static 'app_levil_barra/imagenes/facebook.png' %}" height="41" width="41">Facebook</a></li>
+            </div>
+        </ul>
+    </footer> 
+
+</body>
+</html>

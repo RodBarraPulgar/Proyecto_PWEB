@@ -1,0 +1,96 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/contacto.css' %}">
+
+<title>Contacto - GrupoCero</title>
+
+    <div class="contactanos">
+        <div class="contact_us">
+            <h1>¡Contactanos y realiza tu pedido personalizado!</h1>
+            <hr>
+            <p> ¿Quieres realizar un pedido?<br>
+                ¿Quieres realizar una consulta?<br>
+                Rellena el formulario con tus datos y te contactaremos.
+            </p>
+            <input type="button" name="mostrar" value="Abrir Formulario" id="btnview">
+            <input type="button" name="ocultar" value="Ocultar Formulario" id="btnhide">
+        </div>
+
+        <form class="formulario" method="get" id="formulario">
+            <div class="txt_field">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" name="nombres">
+            </div>
+
+            <div class="txt_field">
+                <label for="apellido_paterno">Apellido paterno</label>
+                <input type="text" id="apellido_paterno" name="apellido_paterno">
+            </div>
+
+            <div class="txt_field">
+                <label for="apellido_materno">Apellido materno</label>
+                <input type="text" id="apellido_materno" name="apellido_materno">
+            </div>
+
+            <div>
+                <label for="genero">Género</label>
+                <select id="genero" name="genero" size="1">
+                    <option value="1">Masculino</option>
+                    <option value="2">Femenino</option>
+                    <option value="3">Otro</option>
+                </select>
+            </div>
+
+            <div class="txt_field">
+                <label for="rut">Rut</label>
+                <input type="text" id="rut" name="rut">
+            </div>
+
+            <div class="txt_field">
+                <label for="direccion">Dirección(Opcional)</label>
+                <input type="text" id="direccion" name="direccion">
+            </div>
+
+            <div class="txt_field">
+                <label for="correo">Email</label>
+                <input type="email" id="correo" name="correo">
+            </div>
+
+            <div class="txt_field">
+                <label form="celular">Celular</label>
+                <input type="text" id="celular" name="celular">
+            </div>
+            
+            <textarea cols="35" rows="5" placeholder="Ingresar motivo del mensaje" id="txt_area"></textarea>"
+            <br>
+            <input type="submit" name="Enviar" id="enviar">
+        </form>
+
+        <section class="weather-content">
+            <h1>Buscador del clima</h1>
+            <div class="result">
+                <p>Agrege ciudad y pais</p>
+            </div>
+            <form action="" method="POST" class="get-weather">
+                <input type="text" name="city" id="city" placeholder="Escribe tu ciudad...">
+                <select name="" id="country">
+                    <option disabled selected value="">Elige el pais</option>
+                    <option value="CL">Chile</option>
+                    <option value="AR">Argentina</option>
+                    <option value="CO">Colombia</option>
+                </select>
+                <input type="submit" name="" id="" value="Obtener Clima">
+            </form>
+        </section>
+
+    </div>
+
+<script src="{% static 'app_levil_barra/js/jquery-3.6.4.min.js' %}" ></script>
+<script src="{% static 'app_levil_barra/js/script_contacto.js' %}" ></script>
+<script src="{% static 'app_levil_barra/js/script.js' %}" ></script>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/nosotros.css' %}">
+
+<title>Nosotros - GrupoCero</title>
+
+    <div id="contenido_nosotros">
+        <!--SE CREA UNA CLASE LLAMADA MISION PARA DETERMINAR LA CAJA QUE LLEVARA LO RELACIONADO A ESTA MISMA-->
+        <div class="mision">
+            <div class="titulo">
+                <div class="center">
+                    Mision
+                    <hr>
+                    <div class="acerca_de">
+                        <p>Nuestro grupo de artistas plásticos se dedica a crear obras de arte que inspiren, emocionen y transmitan una visión del mundo única. A través de nuestra pasión por la pintura, escultura, orfebrería, tejido y otras expresiones artísticas, buscamos enriquecer la cultura y la sociedad. Nos esforzamos por compartir nuestra creatividad y técnicas a través de proyectos colaborativos, exposiciones y eventos culturales para fomentar el aprecio por el arte y la educación.</p>
+                    </div>
+                    <img src="{% static 'app_levil_barra/imagenes/nosotros_1.jpg' %}" height="300px" width="400px">
+                </div>
+            </div>
+        </div>
+
+        <!--SE CREA UNA CLASE LLAMADA VISION PARA DETERMINAR LA CAJA QUE LLEVARA LO RELACIONADO A ESTA MISMA-->
+        <div class="vision">
+            <div class="titulo">
+                <div class="center">
+                    Vision
+                    <hr>
+                    <div class="acerca_de">
+                        <p>Como grupo de artistas plásticos, nuestra visión es convertirnos en un referente dentro del mundo del arte, reconocidos por nuestra calidad y originalidad. Nos esforzamos por crear obras que transmitan un mensaje y una emoción, y que permitan una conexión profunda entre el espectador y la obra. Buscamos que nuestra obra sea una fuente de inspiración para otros artistas y para la sociedad en general. Deseamos dejar un legado cultural a través de nuestras creaciones, y contribuir a la formación de futuras generaciones de artistas comprometidos con la excelencia y la pasión por el arte.</p>
+                    </div>
+                    <img src="{% static 'app_levil_barra/imagenes/nosotros_2.png' %}" height="300px" width="400px">
+                </div>
+            </div>
+        </div>
+
+        <!--SE CREA UNA CLASE LLAMADA OBJETIVOS PARA DETERMINAR LA CAJA QUE LLEVARA LO RELACIONADO A ESTA MISMA-->
+        <div class="objetivos">
+            <div class="titulo">
+                <div class="center">
+                    Objetivos
+                    <hr>
+                    <div class="acerca_de">
+                        <ol>
+                            <li>Fomentar la creación artística: Nos esforzamos por crear un ambiente de colaboración y aprendizaje, para fomentar la creación artística de cada uno de los integrantes del grupo.</li>
+                            <li>Desarrollo profesional: Como artistas, nos esforzamos por mejorar nuestra técnica y habilidades constantemente. Por ello, buscamos participar en talleres y cursos de formación para mejorar nuestra técnica y habilidades, así como para mantenernos actualizados sobre las tendencias y novedades del mundo del arte.</li>
+                            <li>Contribución a la sociedad: Nos esforzamos por contribuir a la sociedad a través del arte. Buscamos participar en proyectos sociales, culturales y comunitarios que permitan el acceso al arte y su apreciación.</li>
+                        </ol>
+                    </div>
+                    <img src="{% static 'app_levil_barra/imagenes/nosotros_3.jpg' %}" height="300px" width="400px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

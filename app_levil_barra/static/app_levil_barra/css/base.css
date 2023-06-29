@@ -1,0 +1,57 @@
+/* ESTILOS PARA LAS PAGINAS EN GENERAL PARA QUE EL FOOTER SEA RESPONSIVE */
+body {
+    margin:0;
+    padding:0;
+    min-height:100%;
+}
+
+/*ESTILOS PARA LA IMAGEN Y EL PARRAFO PRINCIPAL*/
+
+.contenido{
+    background-color: rgb(39, 39, 39);
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+/*ESTILOS PARA EL PIE DE LA PAGINA*/
+
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(59, 59, 59);
+    display: inline-table;
+    align-self: flex-end;
+}
+
+footer li{
+    font-weight: 300;
+    color: rgb(145, 145, 145);
+    display: inline;
+}
+
+footer li p{
+    font-size: 24px;
+    font-weight: 300;
+    color: rgb(197, 197, 197);
+    text-align: center;
+    
+}
+
+footer li a{
+    color:rgb(183, 183, 183);
+    text-decoration: none;
+}
+
+footer li a:hover{
+    color:white;
+}
+
+.center{
+    text-align: center;
+}
+
+.parrafo_footer{
+    margin: 10px;
+    padding: 0;
+}
+

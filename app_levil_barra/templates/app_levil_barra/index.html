@@ -1,0 +1,92 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/index.css' %}">
+
+<title>GrupoCero</title>
+
+<div class="contenido">
+
+    <!-- SE CREA EL CARRUSEL DE TAMAÑO COMPLETO CON UNA SERIE DE 3 IMAGENES CON SUS DESCRIPCIONES -->
+    <div id="carouselExampleCaptions" class="carousel slide col-sm-12 col-sm-offset-1" >
+        <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'app_levil_barra/imagenes/banner_1.jpg' %}" class="d-block w-100" height="700px">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Anillos de Diamante</h5>
+            <p>Joyería</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app_levil_barra/imagenes/banner_2.jpg' %}" class="d-block w-100" height="700px">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Imagen satirica de la sociedad</h5>
+                <p>Retrato hecho a mano</p>
+            </div>
+            </div>
+        <div class="carousel-item">
+            <img src="{% static 'app_levil_barra/imagenes/banner_3.png' %}" class="d-block w-100"  height="700px">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Retrato de un campo</h5>
+            <p>Retrato hecho a mano</p>
+            </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--SE REALIZA EL CONTENIDO DE LA PAGINA EL CUAL CORRESPONDE A 2 IMAGENES CON SUS PARRAFOS CORRESPONDIENTES-->
+    <div class="img_p1"><img src="{% static 'app_levil_barra/imagenes/b2.png' %}"width=200 height=200></div>
+    <p>En el mundo del arte, existen grupos de artistas plásticos que se dedican a diferentes disciplinas como la pintura, escultura, orfebrería, tejido y otras expresiones artísticas. Cada uno de ellos tiene su propio estilo y técnica, pero comparten el amor y la pasión por la creación artística. Estos grupos suelen trabajar juntos en proyectos colaborativos, exposiciones y eventos culturales para dar a conocer su obra y compartir su visión del mundo a través del arte.<br>
+        La pintura es una de las disciplinas más populares dentro de los grupos de artistas plásticos, ya que permite una gran variedad de técnicas y estilos para expresar la creatividad. Desde el impresionismo hasta el arte abstracto, los artistas pueden plasmar su visión del mundo en lienzos, paredes o cualquier otro soporte. Por otro lado, la escultura es una disciplina que se dedica a la creación de formas tridimensionales a partir de diferentes materiales como la madera, el metal o la piedra. Los escultores pueden crear obras monumentales o piezas más pequeñas, pero siempre con un gran valor estético y simbólico. </p>
+    
+
+    <!-- SE REALIZA UNA CLASE QUE DENTRO TIENE VARIAS CAJAS CON UNA IMAGEN Y UN PARRAFO CADA UNA-->
+    <div class="caja_contenido">
+        <div class="center">   
+            <div class="multiple-boxes">
+                <div class="box">
+                    <h3>Orfebrería</h3>
+                    <hr>
+                    <img src="{% static 'app_levil_barra/imagenes/orfebreria_index.jpg' %}" width=300px height=600px>
+                    <p>La orfebrería es un arte milenario que se ha mantenido vigente a lo largo de la historia, y que consiste en la elaboración de objetos decorativos o utilitarios en metales preciosos como oro, plata, bronce y otros materiales. Este arte requiere de una gran habilidad y destreza manual, ya que el artista debe moldear y trabajar cada pieza con sumo cuidado para obtener un resultado final impecable. En el grupo de artistas plásticos, la orfebrería es considerada una disciplina artística que combina la técnica con la creatividad y la originalidad.</p>
+                </div>
+                <div class="box">
+                    <h3>Escultura</h3>
+                    <hr>
+                    <img src="{% static 'app_levil_barra/imagenes/escultura_index.jpg' %}" width=300px height=200px>
+                    <p>La escultura es un arte que ha existido desde tiempos prehistóricos y ha evolucionado a lo largo de los siglos hasta convertirse en una forma de expresión artística que combina habilidades técnicas y creatividad. La escultura puede ser realizada en una variedad de materiales, incluyendo piedra, madera, metal, arcilla y otros. Los escultores utilizan herramientas especiales para esculpir y dar forma a su obra, creando formas tridimensionales que pueden ser realistas o abstractas. La escultura ha sido utilizada en todo el mundo para representar dioses, líderes, héroes y otros personajes importantes, así como para explorar temas como la belleza, la emoción y la historia.</p>
+                </div>
+                <div class="box">
+                    <h3>Pintura</h3>
+                    <hr>
+                    <img src="{% static 'app_levil_barra/imagenes/pintura__index.jpg' %}" width=300px height=200px>
+                    <p>La pintura es una expresión artística que utiliza diferentes técnicas y materiales para crear imágenes en una superficie plana. Los artistas pueden expresar ideas, emociones y transmitir un mensaje visual al espectador mediante la pintura, que puede ser realista o abstracta, colorida o monocromática, y se puede crear con diversos materiales como óleo, acrílico, acuarela, tinta, y más.A lo largo de la historia, la pintura ha sido utilizada para celebrar la belleza natural, representar la realidad y expresar emociones.</p>
+                </div>
+                <div class="box">
+                    <h3>Tejido</h3>
+                    <hr>
+                    <img src="{% static 'app_levil_barra/imagenes/tejido_index.jpg' %}" width=300px height=200px>
+                    <p>El tejido consiste en crear telas a través de la entrelazamiento de hilos o fibras. Desde la creación de tapices, mantas y prendas de vestir, hasta la elaboración de esculturas textiles, el tejido ha evolucionado hasta convertirse en una disciplina artística compleja y fascinante.El tejido es una expresión artística que va más allá de la mera funcionalidad, y que refleja la identidad, la historia y la cultura de un pueblo, convirtiendo cada pieza en una verdadera obra de arte.Con la tecnología moderna, el tejido ha alcanzado nuevas dimensiones, dando lugar a técnicas innovadoras y materiales creativos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+{% endblock %}

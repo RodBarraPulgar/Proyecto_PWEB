@@ -1,0 +1,30 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+
+<title>Login - GrupoCero</title>
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/login.css' %}">
+
+<form class="forma" action="" method="post">
+    {% csrf_token %}
+
+    <div class="card mx-auto" style="width: 30rem;">
+        <div class="card-body">
+          <h3 class="card-title" id="titulo_login">Conectarse</h3><hr>
+          <h5 class="card-title">Ingrese sus Credenciales</h5>
+          {{ form | crispy }}
+          <a href="{% url 'index' %}" class="card-link">Inicio</a>
+          <a href="{% url 'register'%}" class="card-link">Registrarse</a>
+
+          <button class="btn btn-sm btn-primary float-end" type="submit">Iniciar Sesion</button>
+      
+        </div>
+      </div>
+       
+</form>
+
+    {% endblock %}
