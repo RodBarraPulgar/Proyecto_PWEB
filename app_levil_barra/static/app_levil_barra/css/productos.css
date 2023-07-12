@@ -1,157 +1,280 @@
-/*ESTILOS PARA LA PAGINA PRODUCTOS*/
-    .container {
-        margin: 0 auto;
-        padding: 80px 100px 60px 100px;
-        background-color: rgb(81, 81, 81);
-    }
-    
-    #customers {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-    
-    #customers td,
-    #customers th {
-        border: 1px solid rgb(17, 4, 4);
-        padding: 6px;
-    }
-    
-    #customers tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    
-    #customers tr {
-        background-color: rgb(219, 219, 219);
-    }
-    
-    #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #007a47;
-        color: white;
-    }
-    
-    #customers #mid {
-        text-align: center;
-    }
-    
-    #customers #up {
-        background-color: #007a47;
-        border-color: white;
-        border-radius: 5px;
-        padding: 8px;
-        color: white;
-    }
-    
-    #customers #del {
-        background-color: rgb(255, 0, 0);
-        border-color: white;
-        border-radius: 5px;
-        padding: 8px;
-        color: white;
-    }
-    
-    #customers button {
-        width: 100%;
-    }
-    
-    h1 {
-        color: rgb(255, 255, 255);
-    }
-    
-    .container #new3 {
-        padding: 8px;
-        background-color: #007a47;
-        color: white;
-        border-radius: 4px;
-        border-color: #04AA6D;
-    }
+/* Estilos generales */
+.contenido {
+  min-height: 77vh;
+}
 
-    .contenido{
-        padding-top: 2vh;
-        min-height: 72vh;
-    }
-/* ESTILOS PARA LA PAGINA AGREGAR */
-    .container1 {
-        margin: 0 auto;
-        padding: 80px 100px 60px 100px;
-        background-color: rgb(81, 81, 81);
-        max-width: 600px;
-    }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
 
-    .container1 h1 {
-        color: white;
-    }
+h1 {
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
 
-    .container1 form {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+/* Estilos para la tabla de productos */
+#customers {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
 
-    .container1 label {
-        color: white;
-    }
+#customers th,
+#customers td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
 
-    .container1 input[type="text"],
-    .container1 input[type="file"] {
-        width: 165px;
-        padding: 10px;
-    }
+#customers th {
+  background-color: #007a47;
+  color: #fff;
+}
 
-    .container1 button#new {
-        background-color: #007a47;
-        border-color: #04AA6D;
-        border-radius: 4px;
-        padding: 8px;
-        color: white;
-        width: auto;
-    }
-  
-/* ESTILOS PARA LA PAGINA ACTUALIZAR */
-    .container2 {
-        margin: 0 auto;
-        padding: 80px 100px 60px 100px;
-        background-color: rgb(81, 81, 81);
-        max-width: 600px;
-    }
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-    .container2 h1 {
-    color: white;
-    }
+#customers #up,
+#customers #del {
+  background-color: #007a47;
+  border-color: #fff;
+  border-radius: 5px;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+}
 
-    .container2 form {
-    margin-top: 20px;
-    }
+#customers button {
+  width: 100%;
+}
 
-    .container2 label {
-    color: white;
-    }
+/* Estilos para la sección de productos */
+.contenedor-productos {
+  display: flex;
+  padding: 10px;
+}
 
-    .container2 input[type="text"] {
-    padding: 8px;
-    }
+.contenedor-items {
+  padding-left: 30px;
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
-    .container2 img {
-    max-width: 200px;
-    margin-bottom: 10px;
-    }
+.item {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 25px;
+}
 
-    .container2 input[type="file"] {
-    margin-top: 10px;
-    }
+.imagen-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    .container2 button {
-    padding: 8px;
-    background-color: #007a47;
-    color: white;
-    border-radius: 4px;
-    border-color: #04AA6D;
-    cursor: pointer;
-    }
+.imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .container2 button:hover {
-    background-color: #04AA6D;
-    }
+.titulo-item {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.precio-cantidad {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.precio-item {
+  color: #007a47;
+  font-weight: bold;
+}
+
+.cantidad-container {
+  display: flex;
+  align-items: center;
+}
+
+.boton-menos,
+.boton-mas {
+  background-color: #007a47;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cantidad-input {
+  width: 40px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.boton-item.agregar-carrito {
+  background-color: #007a47;
+  color: #fff;
+}
+
+.boton-item.agregar-carrito:hover {
+  background-color: #005632;
+}
+
+/* Estilos para el carrito de compras */
+.carrito-container {
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  width: 600px;
+}
+
+.carrito-container h2 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.carrito-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.carrito-container li {
+  margin-bottom: 5px;
+}
+
+.total-carrito {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.boton-item {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-item:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .contenedor-productos {
+    flex-direction: column;
+  }
+
+  .contenedor-items {
+    padding-left: 0;
+    justify-content: center;
+  }
+
+  .item {
+    margin-left: 0;
+  }
+
+  .carrito-container {
+    width: auto;
+    margin-left: 25px;
+    margin-top: 40px;
+  }
+}
+
+/* Estilos para el cuadro blanco */
+#cuadro-blanco {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#cuadro-blanco.mostrar {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contenido-cuadro {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.contenido-cuadro #cerrar-cuadro {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: green;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.contenido-cuadro h3,
+.contenido-cuadro p {
+  margin: 10px 0;
+}
+
+.contenido-cuadro img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos adicionales para el carrito de compras */
+.carrito-container .cantidad-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.carrito-container .cantidad-label {
+  margin-right: 5px;
+  color: #fff;
+}
+
+
