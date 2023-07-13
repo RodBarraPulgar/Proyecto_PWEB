@@ -10,52 +10,47 @@
 
 <!-- CRUD SUPERUSUARIO -->
 {% if obj.is_superuser %}
-<div class="contenido">
-  <div class="container_crud">
-    <h1>Productos</h1>
-    <table id="customers" border="1">
-      <thead>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Cantidad</th>
-        <th>Imagen</th>
-        <th colspan="2" id="min">Realizar</th>
-      </thead>
-      {% for x in pro %}
-      <tr>
-        <td>{{ x.id }}</td>
-        <td>{{ x.nombre }}</td>
-        <td>{{ x.descripcion }}</td>
-        <td>{{ x.precio }}</td>
-        <td>{{ x.cantidad }}</td>
-        <td>
-          {% if x.imagen %}
-          <img src="{{ x.imagen.url }}" alt="Imagen del Producto" height="200px" width="200px">
-          {% else %}
-          Sin imagen
-          {% endif %}
-        </td>
-        <td><a href="actualizar/{{ x.id }}"><button id="up">Actualizar</button></a></td>
-        <td><a href="eliminar/{{ x.id }}"><button id="del">Eliminar</button></a></td>
-      </tr>
-      {% endfor %}
-    </table>
-    <br><br>
-    <a href="{% url 'agregar' %}"><button id="new3">Agregar Producto</button></a>
+  <div class="contenido">
+    <div class="container_crud">
+      <h1>Productos</h1>
+      <table id="customers" border="1">
+        <thead>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Imagen</th>
+          <th colspan="2" id="min">Realizar</th>
+        </thead>
+        {% for x in pro %}
+        <tr>
+          <td>{{ x.id }}</td>
+          <td>{{ x.nombre }}</td>
+          <td>{{ x.descripcion }}</td>
+          <td>{{ x.precio }}</td>
+          <td>{{ x.cantidad }}</td>
+          <td>
+            {% if x.imagen %}
+            <img src="{{ x.imagen.url }}" alt="Imagen del Producto" height="200px" width="200px">
+            {% else %}
+            Sin imagen
+            {% endif %}
+          </td>
+          <td><a href="actualizar/{{ x.id }}"><button id="up">Actualizar</button></a></td>
+          <td><a href="eliminar/{{ x.id }}"><button id="del">Eliminar</button></a></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br><br>
+      <a href="{% url 'agregar' %}"><button id="new3">Agregar Producto</button></a>
+    </div>
   </div>
-</div>
-<<<<<<< HEAD
 
 {% else %}
-=======
-{% endif %}
+  <!-- CARRO DE COMPRAS USUARIOS NORMALES -->
 
->>>>>>> 305907ead1c8028af091eba6baacf55a57a8459f
-<!-- CARRO DE COMPRAS USUARIOS NORMALES -->
-
-<div class="contenedor-productos">
+  <div class="contenedor-productos">
     <section class="contenedor-items">
       {% for x in pro %}
         <div class="item">
@@ -108,11 +103,8 @@
     </aside>
   </div>
 
-<<<<<<< HEAD
   {% endif %}
 
-=======
->>>>>>> 305907ead1c8028af091eba6baacf55a57a8459f
-<script src="{% static 'app_levil_barra/js/productos.js' %}"></script>
+  <script src="{% static 'app_levil_barra/js/productos.js' %}"></script>
 
 {% endblock %}
