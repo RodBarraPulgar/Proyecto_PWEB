@@ -8,46 +8,103 @@
 
 <title>Productos - GrupoCero</title>
 
-    <div class="contenido">
-        <div class="container">
-            <h1>Productos</h1>
-            <table id="customers" border="1">
-                <thead>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Descripcion</th>
-                    <th>Precio</th>
-                    <th>Imagen</th>
-                    {% if obj.is_superuser %}
-                    <th colspan="2" id="min">Realizar</th>
-                    {% endif %}
-                </thead>
-                {% for x in pro %}
-            <tr>
-                <td>{{ x.id }}</td>
-                <td>{{ x.nombre }}</td>
-                <td>{{ x.descripcion }}</td>
-                <td>{{ x.precio }}</td>
-                <td>
-                    {% if x.imagen %}
-                        <img src="{{ x.imagen.url }}" alt="Imagen del Producto" height="200px" width="200px">
-                    {% else %}
-                        Sin imagen
-                    {% endif %}
-                </td>
-                {% if obj.is_superuser %}
-                    <td><a href="actualizar/{{ x.id }}"><button id="up">Actualizar</button></a></td>
-                    <td><a href="eliminar/{{ x.id }}"><button id="del">Eliminar</button></a></td>
-                {% endif %}
-            </tr>
-            {% endfor %}
-            </table>
-            <br><br>
-            {% if obj.is_superuser %}
-            <a href="{% url 'agregar' %}"><button id="new3">Agregar Producto</button></a>
-            {% endif %}
-        </div>
-    </div>
+<!-- CRUD SUPERUSUARIO -->
+{% if obj.is_superuser %}
+<div class="contenido">
+  <div class="container_crud">
+    <h1>Productos</h1>
+    <table id="customers" border="1">
+      <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Imagen</th>
+        <th colspan="2" id="min">Realizar</th>
+      </thead>
+      {% for x in pro %}
+      <tr>
+        <td>{{ x.id }}</td>
+        <td>{{ x.nombre }}</td>
+        <td>{{ x.descripcion }}</td>
+        <td>{{ x.precio }}</td>
+        <td>{{ x.cantidad }}</td>
+        <td>
+          {% if x.imagen %}
+          <img src="{{ x.imagen.url }}" alt="Imagen del Producto" height="200px" width="200px">
+          {% else %}
+          Sin imagen
+          {% endif %}
+        </td>
+        <td><a href="actualizar/{{ x.id }}"><button id="up">Actualizar</button></a></td>
+        <td><a href="eliminar/{{ x.id }}"><button id="del">Eliminar</button></a></td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br><br>
+    <a href="{% url 'agregar' %}"><button id="new3">Agregar Producto</button></a>
+  </div>
+</div>
 
+{% else %}
+<!-- CARRO DE COMPRAS USUARIOS NORMALES -->
+
+<div class="contenedor-productos">
+    <section class="contenedor-items">
+      {% for x in pro %}
+        <div class="item">
+          <div class="imagen-container">
+            <img src="{{ x.imagen.url }}" alt="Imagen del Producto" class="producto-imagen"
+                data-nombre="{{ x.nombre|escapejs }}"
+                data-imagen="{{ x.imagen.url }}"
+                data-descripcion="{{ x.descripcion|escapejs }}"
+                data-cantidad="{{ x.cantidad }}"
+                data-precio="{{ x.precio }}">
+          </div>
+          <div class="titulo-item">{{ x.nombre }}</div>
+          <div class="precio-cantidad">
+            <div class="precio-item">${{ x.precio }} CLP</div>
+            <div class="cantidad-container">
+              <button class="boton-menos">-</button>
+              <input type="number" name="cantidad" value="1" min="1" max="{{ x.cantidad }}" class="cantidad-input"
+                    data-producto-id="{{ x.id }}">
+              <button class="boton-mas" data-max-cantidad="{{ x.cantidad }}">+</button>
+            </div>
+          </div>
+          <button class="boton-item agregar-carrito" data-producto-id="{{ x.id }}" data-producto-nombre="{{ x.nombre }}"
+                  data-producto-precio="{{ x.precio }}">Agregar al carrito</button>
+        </div>
+      {% endfor %}
+
+      <div id="cuadro-blanco" class="oculto">
+        <div class="contenido-cuadro">
+          <button id="cerrar-cuadro">&times;</button>
+          <h3 id="titulo"></h3>
+          <div class="imagen-container">
+            <img id="imagen" src="" alt="Imagen del Producto">
+          </div>
+          <p id="descripcion"></p>
+          <p id="cantidad"></p>
+          <p id="precio"></p>
+        </div>
+      </div>
+          
+    </section>
+  
+    <aside class="carrito-container">
+      <h2>Carrito de compras</h2>
+      <ul id="carrito-lista">
+        <!-- Los productos agregados se mostrarán aquí -->
+      </ul>
+      <div class="total-carrito">Total: <span id="carrito-total">$0</span> CLP</div>
+      <button class="boton-item" id="vaciar-carrito">Vaciar carrito</button>
+      <button class="boton-item" id="comprar">Comprar</button>
+    </aside>
+  </div>
+
+  {% endif %}
+
+<script src="{% static 'app_levil_barra/js/productos.js' %}"></script>
 
 {% endblock %}

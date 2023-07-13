@@ -1,0 +1,57 @@
+{% extends 'app_levil_barra/base.html' %}
+
+{% block contenido %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app_levil_barra/css/carrito.css' %}">
+
+<title>Carrito de compras - GrupoCero</title>
+
+<div class="contenido">
+  <div class="container">
+    <h1>Carrito de compras</h1>
+    
+    {% if productos %}
+    <table id="carrito-table">
+      <thead>
+        <tr>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio unitario</th>
+          <th>Subtotal</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for producto in productos %}
+        <tr>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.cantidad }}</td>
+          <td>${{ producto.precio }}</td>
+          <td>${{ producto.subtotal }}</td>
+          <td>
+            <form action="{% url 'eliminar_carrito' producto.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="eliminar-btn">Eliminar</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="total">
+      <span>Total:</span>
+      <span>${{ total }}</span>
+    </div>
+    <a href="{% url 'realizar_compra' %}" class="realizar-compra-btn">Realizar compra</a>
+    {% else %}
+    <p>No hay productos en el carrito.</p>
+    {% endif %}
+    
+  </div>
+</div>
+
+{% endblock %}
+
+

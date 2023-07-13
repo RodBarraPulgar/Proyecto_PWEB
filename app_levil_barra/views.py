@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout, authenticate, login
 from .forms import AgregarProductoForm
 from .forms import CustomUserCreationForm
+from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 def index(request):
     context={}
@@ -49,11 +51,12 @@ def agregar(request):
     return render(request, 'app_levil_barra/agregar.html')
 
 def agregarrec(request):
-    x=request.POST['nombre']
-    y=request.POST['descripcion']
-    z=request.POST['precio']
-    w=request.FILES.get('imagen')
-    pro=Producto(nombre=x,descripcion=y,precio=z,imagen=w)
+    x = request.POST['nombre']
+    y = request.POST['descripcion']
+    z = request.POST['precio']
+    w = request.FILES.get('imagen')
+    c = request.POST['cantidad']
+    pro=Producto(nombre=x,descripcion=y,precio=z,imagen=w,cantidad=c)
     pro.save()
     return redirect("/productos")
 
@@ -71,6 +74,7 @@ def actualizar(request,id):
     pro=Producto.objects.get(id=id)
     return render(request,'app_levil_barra/actualizar.html',{'pro':pro})
 
+
 def actualizarrec(request, id):
     pro = Producto.objects.get(id=id)
     
@@ -79,11 +83,13 @@ def actualizarrec(request, id):
         y = request.POST['descripcion']
         z = request.POST['precio']
         w = request.FILES.get('imagen')
+        c = request.POST['cantidad']
         pro.nombre = x
         pro.descripcion = y
         pro.precio = z
         if w:
             pro.imagen = w
+        pro.cantidad = c
         pro.save()
         return redirect("/productos")
     return render(request, 'app_levil_barra/actualizar.html', {'pro': pro})
@@ -104,3 +110,18 @@ def agregar_producto(request):
         form = AgregarProductoForm()
     return render(request, 'agregar.html', {'form': form})
 
+
+def carrito(request):
+    context = {}
+    return render(request, 'app_levil_barra/carrito.html', context)
+
+def obtener_producto(request, id):
+    producto = get_object_or_404(Producto, id=id)
+    producto_data = {
+        'id': producto.id,
+        'nombre': producto.nombre,
+        'descripcion': producto.descripcion,
+        'precio': producto.precio,
+        'cantidad': producto.cantidad,
+    }
+    return JsonResponse(producto_data)

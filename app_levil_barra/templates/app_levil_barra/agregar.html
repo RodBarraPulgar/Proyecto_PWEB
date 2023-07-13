@@ -28,6 +28,8 @@
             {% if form.errors.precio %}
                 <p>{{ form.errors.precio }}</p>
             {% endif %}<br>
+            <label for="Cantidad">Cantidad</label><br><br>
+            <input type="number" name="cantidad" id="cantidad" required>Cantidad<br>
             <label for="id_imagen">Imagen</label><br><br>
             <input type="file" name="imagen" id="id_imagen" required><br>
             {% if form.errors.imagen %}

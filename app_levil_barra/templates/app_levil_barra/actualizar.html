@@ -8,7 +8,7 @@
 
 <title>ProductosUp - GrupoCero</title>
 
-    <div class="contenido">
+    <div class="contenido-actualizar">
         <div class="container2">
             <h1>Actualizar Producto</h1>
             <form action="{% url 'actualizarrec' pro.id %}" method="post" enctype="multipart/form-data">
@@ -28,6 +28,8 @@
                 {% if form.errors.precio %}
                     <p>{{ form.errors.precio }}</p>
                 {% endif %}<br>
+                <label for="Cantidad">Cantidad</label><br><br>
+                <input type="number" name="cantidad" id="cantidad" value="{{ pro.cantidad }}" required><br>
                 <label for="id_imagen">Imagen</label><br><br>
                 {% if pro.imagen %}
                     <img src="{{ pro.imagen.url }}" alt="Imagen actual">

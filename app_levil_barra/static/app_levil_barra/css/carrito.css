@@ -1,0 +1,75 @@
+/* Estilos generales del carrito */
+.contenido {
+    margin-top: 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Estilos de la tabla */
+  #carrito-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  #carrito-table th,
+  #carrito-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #carrito-table th {
+    text-align: left;
+  }
+  
+  /* Estilos del total */
+  .total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .total span:first-child {
+    margin-right: 10px;
+  }
+  
+  /* Estilos del botón de realizar compra */
+  .realizar-compra-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .realizar-compra-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilos del botón de eliminar */
+  .eliminar-btn {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .eliminar-btn:hover {
+    background-color: #b02a37;
+  }

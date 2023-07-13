@@ -7,3 +7,8 @@ class Producto(models.Model):
     descripcion = models.CharField(max_length=50)
     precio = models.IntegerField()
     imagen = models.ImageField(upload_to="productos/", null=True)
+    cantidad = models.IntegerField()
+
+    def subtotal(self):
+            return self.precio * self.cantidad
+
